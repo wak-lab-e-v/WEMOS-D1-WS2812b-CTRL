@@ -1283,15 +1283,15 @@ high speed (Philips)</description>
 <pinref part="X3" gate="G$1" pin="1"/>
 <pinref part="X1" gate="-1" pin="KL"/>
 <pinref part="J1" gate="-1" pin="S"/>
-<wire x1="50.8" y1="33.02" x2="124.46" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="33.02" x2="124.46" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="129.54" y1="58.42" x2="124.46" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="58.42" x2="124.46" y2="33.02" width="0.1524" layer="91"/>
 <junction x="124.46" y="33.02"/>
-<wire x1="50.8" y1="33.02" x2="50.8" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="63.5" x2="38.1" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="33.02" x2="48.26" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="63.5" x2="38.1" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="X2" gate="-1" pin="KL"/>
-<wire x1="50.8" y1="33.02" x2="33.02" y2="33.02" width="0.1524" layer="91"/>
-<junction x="50.8" y="33.02"/>
+<wire x1="48.26" y1="33.02" x2="33.02" y2="33.02" width="0.1524" layer="91"/>
+<junction x="48.26" y="33.02"/>
 </segment>
 <segment>
 <pinref part="P+2" gate="VCC" pin="VCC"/>
