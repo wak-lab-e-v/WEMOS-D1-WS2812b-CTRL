@@ -1,0 +1,27 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=ESP-LED-CTRL
+*Date=23:16:07
+*CreatedBy=Fritzing 0.9.3b.04.19.5c895d327c44a3114e5fcc9d8260daf0cbb52806
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;usb-minib;4.52646;-20.3674;0;Top;U1
+2;;;38.0837;-22.5774;90;Bottom;WeMos D1 Mini1
+3;;THT;12.3565;-31.4674;90;Bottom;J4
+4;;300 mil [THT];17.4365;-9.90282;90;Bottom;D1
+5;;THT;4.22847;-7.69043;180;Bottom;J1
+6;;THT;68.2365;-22.7298;0;Bottom;J3
+7;;usb-microb;2.98567;-32.7674;90;Top;X1
+8;;;70.7912;-26.3982;0;Bottom;Via1
+9;;tactile-pth;15.6077;-21.028;0;Bottom;S1
+10;;2x5-ra;60.409;-13.6874;0;Bottom;JP1
+11;;molex-1x4_lock;61.8865;-33.8804;180;Bottom;JP3
+12;;THT;68.7445;-9.52441;0;Bottom;J2
