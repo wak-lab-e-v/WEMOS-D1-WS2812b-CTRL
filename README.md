@@ -1,4 +1,4 @@
-# ESP8266 LED Controller
+# WEMOS D1 (ESP8266) LED Controller
 
 Controller for WS2812B LED Strips / Panels / i.e. , optimized for the https://github.com/Aircoookie/WLED projekt
 
@@ -35,12 +35,12 @@ Controller for WS2812B LED Strips / Panels / i.e. , optimized for the https://gi
 - Signal to GPIO4 / D2 (can be changed in NpbWrapper.h)
 
 
-PCB:
+*PCB:*
 
-D2 to Infrared solder pad
-D3 to button solder pad
-D4 to solder bridge/switch, level shifter, led signal solder pad
-D0 to solder bridge/switch, level shifter, led signal solder pad
+- D2 to Infrared solder pad
+- D3 to button solder pad
+- D4 to solder bridge/switch, level shifter, led signal solder pad
+- D0 to solder bridge/switch, level shifter, led signal solder pad
 
 
 *Wemos D1 Pinout:*
@@ -55,7 +55,7 @@ D0 to solder bridge/switch, level shifter, led signal solder pad
 - D6	IO	GPIO12, MISO
 - D7	IO	GPIO13, MOSI
 - D8	IO	GPIO15, 10k Pull-down, SS (Slave Select)
-- G	GND
-- 5V	5V (unprotected)
-- 3V3	3,3V 
+- GND
+- 5V	(unprotected)
+- 3V3	3,3V (from onboard step-down)
 
