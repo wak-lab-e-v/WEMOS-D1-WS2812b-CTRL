@@ -1,5 +1,7 @@
 # WEMOS D1 (ESP8266) LED Controller
 
+![Bild](https://github.com/wak-lab-e-v/ESPLEDCTRL/raw/master/pictures/ESPLEDCTRL.jpg)
+
 Controller for WS2812B LED Strips / Panels / i.e. , optimized for the https://github.com/Aircoookie/WLED projekt
 
 *Targets:*
