@@ -1,11 +1,13 @@
 Board Version 2:
 
-- generell weg von SMD (Shifter und SMD-Elko -> war schwer zu verlöten )
+- generell weg von SMD (Shifter und SMD-Elko -> ist schwer zu verlöten )
 - PCB darf etwas größer werden -> ggf ESP32 soll mal Platz haben, ggf. auch direkt vorbereiten
 - Ausgangswahl D4/D0 entfällt
-- 4 Ausgänge des D1 werden geshiftet (D4,D3,D2,D1)
-- IR Eingang (D2 wechselt auf D0)
-- Button Eingang (D3 wechselt auf D5)
+- mindestens 2 Ausgänge des ESP werden geshiftet (D4 & D0)
+- Hinweis WLED-WIKI: LED Data	ESP8266: 1, 2 (3 if <= 100 LEDs), ESP32: 1, 2, 3, 4, 16
+- GPIO2 = ESP8266 = D4, on ESP32 based boards use IO16 or G16 or 16
+- IR Eingang 
+- Button Eingang (D3/IO17)
 - Shifter via SN74AHCT125N
 - jeder Ausgang hat seine 3 Lötpads
 - Lötpads wenn möglich durchkontaktieren
