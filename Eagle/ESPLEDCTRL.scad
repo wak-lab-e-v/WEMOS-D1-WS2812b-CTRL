@@ -31,6 +31,22 @@ module ESPLEDCTRL(){
 					translate([-1.270,16.828])circle(r=0.500,$fn=$fn); //TSOP38 1
 					translate([-1.270,14.288])circle(r=0.500,$fn=$fn); //TSOP38 2
 					translate([-1.270,11.748])circle(r=0.500,$fn=$fn); //TSOP38 3
+					translate([36.195,21.590])circle(r=0.508,$fn=$fn); //MA08-1 1
+					translate([38.735,21.590])circle(r=0.508,$fn=$fn); //MA08-1 2
+					translate([41.275,21.590])circle(r=0.508,$fn=$fn); //MA08-1 3
+					translate([43.815,21.590])circle(r=0.508,$fn=$fn); //MA08-1 4
+					translate([46.355,21.590])circle(r=0.508,$fn=$fn); //MA08-1 5
+					translate([48.895,21.590])circle(r=0.508,$fn=$fn); //MA08-1 6
+					translate([51.435,21.590])circle(r=0.508,$fn=$fn); //MA08-1 7
+					translate([53.975,21.590])circle(r=0.508,$fn=$fn); //MA08-1 8
+					translate([36.195,-1.270])circle(r=0.508,$fn=$fn); //MA08-1 1
+					translate([38.735,-1.270])circle(r=0.508,$fn=$fn); //MA08-1 2
+					translate([41.275,-1.270])circle(r=0.508,$fn=$fn); //MA08-1 3
+					translate([43.815,-1.270])circle(r=0.508,$fn=$fn); //MA08-1 4
+					translate([46.355,-1.270])circle(r=0.508,$fn=$fn); //MA08-1 5
+					translate([48.895,-1.270])circle(r=0.508,$fn=$fn); //MA08-1 6
+					translate([51.435,-1.270])circle(r=0.508,$fn=$fn); //MA08-1 7
+					translate([53.975,-1.270])circle(r=0.508,$fn=$fn); //MA08-1 8
 					translate([36.195,-1.270])circle(r=0.500,$fn=$fn); //WEMOS-D1-MINI JP1.1
 					translate([38.735,-1.270])circle(r=0.500,$fn=$fn); //WEMOS-D1-MINI JP1.2
 					translate([41.275,-1.270])circle(r=0.500,$fn=$fn); //WEMOS-D1-MINI JP1.3
@@ -99,6 +115,22 @@ module ESPLEDCTRL(){
 			translate([24.384,17.463]) rotate([0,0,180.000]) square([1.168,1.600], center = true); //SJ_2 1
 			translate([22.860,17.463]) rotate([0,0,180.000]) square([1.168,1.600], center = true); //SJ_2 2
 			translate([21.336,17.463]) rotate([0,0,180.000]) square([1.168,1.600], center = true); //SJ_2 3
+			translate([36.195,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 1
+			translate([38.735,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 2
+			translate([41.275,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 3
+			translate([43.815,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 4
+			translate([46.355,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 5
+			translate([48.895,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 6
+			translate([51.435,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 7
+			translate([53.975,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 8
+			translate([36.195,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 1
+			translate([38.735,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 2
+			translate([41.275,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 3
+			translate([43.815,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 4
+			translate([46.355,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 5
+			translate([48.895,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 6
+			translate([51.435,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 7
+			translate([53.975,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 8
 			translate([36.195,-1.270]) circle(r=0.754,$fn=$fn);
 			translate([38.735,-1.270]) circle(r=0.754,$fn=$fn);
 			translate([41.275,-1.270]) circle(r=0.754,$fn=$fn);
@@ -127,6 +159,22 @@ module ESPLEDCTRL(){
 			translate([-1.270,16.828]) circle(r=0.500,$fn=$fn);
 			translate([-1.270,14.288]) circle(r=0.500,$fn=$fn);
 			translate([-1.270,11.748]) circle(r=0.500,$fn=$fn);
+			translate([36.195,21.590]) circle(r=0.508,$fn=$fn);
+			translate([38.735,21.590]) circle(r=0.508,$fn=$fn);
+			translate([41.275,21.590]) circle(r=0.508,$fn=$fn);
+			translate([43.815,21.590]) circle(r=0.508,$fn=$fn);
+			translate([46.355,21.590]) circle(r=0.508,$fn=$fn);
+			translate([48.895,21.590]) circle(r=0.508,$fn=$fn);
+			translate([51.435,21.590]) circle(r=0.508,$fn=$fn);
+			translate([53.975,21.590]) circle(r=0.508,$fn=$fn);
+			translate([36.195,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([38.735,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([41.275,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([43.815,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([46.355,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([48.895,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([51.435,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([53.975,-1.270]) circle(r=0.508,$fn=$fn);
 			translate([36.195,-1.270]) circle(r=0.500,$fn=$fn);
 			translate([38.735,-1.270]) circle(r=0.500,$fn=$fn);
 			translate([41.275,-1.270]) circle(r=0.500,$fn=$fn);
@@ -302,6 +350,22 @@ module ESPLEDCTRL(){
 			translate([23.559,-2.223]) square([1.168,1.600], center = true); //SJ_2 1
 			translate([25.082,-2.223]) square([1.168,1.600], center = true); //SJ_2 2
 			translate([26.607,-2.223]) square([1.168,1.600], center = true); //SJ_2 3
+			translate([36.195,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 1
+			translate([38.735,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 2
+			translate([41.275,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 3
+			translate([43.815,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 4
+			translate([46.355,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 5
+			translate([48.895,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 6
+			translate([51.435,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 7
+			translate([53.975,21.590]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 8
+			translate([36.195,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 1
+			translate([38.735,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 2
+			translate([41.275,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 3
+			translate([43.815,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 4
+			translate([46.355,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 5
+			translate([48.895,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 6
+			translate([51.435,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 7
+			translate([53.975,-1.270]) rotate([0,0,180.000]) EaglePad([1.524,3.048], 100); //MA08-1 8
 			translate([36.195,-1.270]) circle(r=0.754,$fn=$fn);
 			translate([38.735,-1.270]) circle(r=0.754,$fn=$fn);
 			translate([41.275,-1.270]) circle(r=0.754,$fn=$fn);
@@ -335,6 +399,22 @@ module ESPLEDCTRL(){
 			translate([-1.270,16.828]) circle(r=0.500,$fn=$fn);
 			translate([-1.270,14.288]) circle(r=0.500,$fn=$fn);
 			translate([-1.270,11.748]) circle(r=0.500,$fn=$fn);
+			translate([36.195,21.590]) circle(r=0.508,$fn=$fn);
+			translate([38.735,21.590]) circle(r=0.508,$fn=$fn);
+			translate([41.275,21.590]) circle(r=0.508,$fn=$fn);
+			translate([43.815,21.590]) circle(r=0.508,$fn=$fn);
+			translate([46.355,21.590]) circle(r=0.508,$fn=$fn);
+			translate([48.895,21.590]) circle(r=0.508,$fn=$fn);
+			translate([51.435,21.590]) circle(r=0.508,$fn=$fn);
+			translate([53.975,21.590]) circle(r=0.508,$fn=$fn);
+			translate([36.195,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([38.735,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([41.275,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([43.815,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([46.355,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([48.895,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([51.435,-1.270]) circle(r=0.508,$fn=$fn);
+			translate([53.975,-1.270]) circle(r=0.508,$fn=$fn);
 			translate([36.195,-1.270]) circle(r=0.500,$fn=$fn);
 			translate([38.735,-1.270]) circle(r=0.500,$fn=$fn);
 			translate([41.275,-1.270]) circle(r=0.500,$fn=$fn);
@@ -456,6 +536,8 @@ module ESPLEDCTRL(){
 			translate([-1.270,14.288,board_thickness])rotate([0,0,270])TSOP38(Name="IC2",Value="",Library="modules"); 
 			translate([22.860,17.463,board_thickness])rotate([0,0,180])SJ_2(Name="SJ1",Value="",Library="jumper"); 
 			translate([25.082,-2.223,0])rotate([180,0,0])SJ_2(Name="SJ2",Value="",Library="jumper"); 
+			translate([45.085,21.590,board_thickness])MA08_1(Name="SV1",Value="",Library="con-lstb"); 
+			translate([45.085,-1.270,board_thickness])MA08_1(Name="SV2",Value="",Library="con-lstb"); 
 			translate([45.720,10.160,board_thickness])rotate([0,0,90])WEMOS_D1_MINI(Name="U$1",Value="WEMOS-D1-MINI",Library="diy-modules"); 
 			translate([21.908,10.160,0])rotate([180,0,0])DC_DC_STEP_DOWN_LM2596(Name="U$2",Value="DC-DC-STEP-DOWN-LM2596",Library="diy-modules"); 
 			translate([51.117,10.795,0])rotate([180,0,180])PAD2X4(Name="X5",Value="",Library="modules"); 
@@ -523,6 +605,15 @@ module ESPLEDCTRL(){
 			rotate([0,0,180]) translate([-2.413,-1.016,0]) linear_extrude(10) square([4.826,2.032]); //Dummy Package
 		}
 	}
+	module MA08_1(Name="",Value="",Library="con-lstb")
+	{
+		// X1=-10.160, Y1=-1.270, X2=10.160, Y2=1.270, Ex=45.085, Ey=21.590, a=
+		if (HideAutogeneratedParts) {
+			InvisiblePart(); } 
+		else {
+			translate([-10.160,-1.270,0]) linear_extrude(10) square([20.320,2.540]); //Dummy Package
+		}
+	}
 	module WEMOS_D1_MINI(Name="",Value="",Library="diy-modules")
 	{
 		// X1=-17.399, Y1=-12.700, X2=17.145, Y2=12.700, Ex=45.720, Ey=10.160, a=90
@@ -546,7 +637,6 @@ module ESPLEDCTRL(){
 		// X1=6659.769, Y1=6700.091, X2=6659.769, Y2=6700.091, Ex=51.117, Ey=10.795, a=180
 		InvisiblePart(); //No Dimension
 	}
-
 
 	include <packages.scad>;
 

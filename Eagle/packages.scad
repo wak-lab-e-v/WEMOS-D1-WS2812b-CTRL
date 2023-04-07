@@ -1,6 +1,8 @@
 Detailgrad = Detailgrad ? Detailgrad : 10;
 function defined(a) = (a != undef);
 
+module 1X08_CLEANBIG(Name="",Value="",Library="pinhead") {LSTA(n=8);}
+module MA08_1(Name="",Value="",Library="con-lstb") {LSTB(n=8);}
 module PANASONIC_D(Name="",Value="",Library="") {  color("DarkSlateGray") translate([0,0,1/2]) cube([6.6,6.6,1], center = true); color("silver") Phased_cylinder(5.8,6.3/2,6.3/2);}
 module C1206(Name="",Value="",Library="") {C_SMD([3.2,1.6,0.8]);}
 // Generic
@@ -138,7 +140,7 @@ module WEMOS_D1_MINI(Name="",Value="",Library=""){
 	board_size = [25.400,34.290];
 	board_origin = [0,0];
 	board_polygons = [[[-10.795,-17.145],[-10.795,-10.160],[-12.700,-10.160],[-12.700,13.970],[-12.587,14.813],[-12.254,15.595],[-11.725,16.261],[-11.039,16.763],[-10.244,17.065],[-9.398,17.145],[9.525,17.145],[10.368,17.032],[11.150,16.699],[11.816,16.170],[12.318,15.484],[12.620,14.689],[12.700,13.843],[12.700,-17.145],[3.810,-17.145],[3.810,-15.621],[-5.080,-15.621],[-5.080,-17.145]]];
-	translate([0,0,0]) union()   // PCB whith parts and text
+	translate([0,0,11]) union()   // PCB whith parts and text
 	{
 		color("#265004")linear_extrude(height=board_thickness,center=false, convexity=10)
 		union()  // PCB 
@@ -148,30 +150,26 @@ module WEMOS_D1_MINI(Name="",Value="",Library=""){
 				translate(board_origin)  polygon(points = board_polygons[0]); //Board
 				if (Detailgrad > 9) // Drill part holes 
 				{
+					translate([-11.430,-8.255])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 1
+					translate([-11.430,-5.715])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 2
+					translate([-11.430,-3.175])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 3
+					translate([-11.430,-0.635])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 4
+					translate([-11.430,1.905])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 5
+					translate([-11.430,4.445])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 6
+					translate([-11.430,6.985])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 7
+					translate([-11.430,9.525])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 8
+					translate([11.430,-8.255])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 1
+					translate([11.430,-5.715])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 2
+					translate([11.430,-3.175])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 3
+					translate([11.430,-0.635])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 4
+					translate([11.430,1.905])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 5
+					translate([11.430,4.445])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 6
+					translate([11.430,6.985])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 7
+					translate([11.430,9.525])circle(r=0.508,$fn=$fn); //1X08-CLEANBIG 8
 					translate([2.965,-13.725])circle(r=0.750,$fn=$fn); //ZX62D-B-5PA8 S1
 					translate([-4.235,-13.725])circle(r=0.750,$fn=$fn); //ZX62D-B-5PA8 S2
 					translate([-3.060,-10.825])circle(r=0.350,$fn=$fn); //ZX62D-B-5PA8 S3
 					translate([1.790,-10.825])circle(r=0.350,$fn=$fn); //ZX62D-B-5PA8 S4
-					if (EnableVias && (Detailgrad > 12)) 
- 					union() // Vias 
-					{
-						translate([-11.430,9.525])circle(r=0.500,$fn=$fn); //via
-						translate([-11.430,6.985])circle(r=0.500,$fn=$fn); //via
-						translate([-11.430,4.445])circle(r=0.500,$fn=$fn); //via
-						translate([-11.430,1.905])circle(r=0.500,$fn=$fn); //via
-						translate([-11.430,-0.635])circle(r=0.500,$fn=$fn); //via
-						translate([-11.430,-3.175])circle(r=0.500,$fn=$fn); //via
-						translate([-11.430,-5.715])circle(r=0.500,$fn=$fn); //via
-						translate([-11.430,-8.255])circle(r=0.500,$fn=$fn); //via
-						translate([11.430,9.525])circle(r=0.500,$fn=$fn); //via
-						translate([11.430,6.985])circle(r=0.500,$fn=$fn); //via
-						translate([11.430,4.445])circle(r=0.500,$fn=$fn); //via
-						translate([11.430,2.032])circle(r=0.500,$fn=$fn); //via
-						translate([11.430,-0.635])circle(r=0.500,$fn=$fn); //via
-						translate([11.430,-3.175])circle(r=0.500,$fn=$fn); //via
-						translate([11.430,-5.715])circle(r=0.500,$fn=$fn); //via
-						translate([11.430,-8.255])circle(r=0.500,$fn=$fn); //via
-					} // End Vias
 				} // end Drill part holes
 			} //end difference() PCB and holes 
 			if (holewithorigin) 
@@ -181,7 +179,23 @@ module WEMOS_D1_MINI(Name="",Value="",Library=""){
 		} //end union() // PCB 
 		if (Detailgrad > 10) color("#DFDDE0",1) translate([0,0,board_thickness-0.017]) linear_extrude(height=0.040,center=false, convexity=10) difference()  { 
 	  union() { 
-					translate([-7.500,8.945]) square([2.000,1.200], center = true); //ESP-12 1
+					translate([-11.430,-8.255]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,-5.715]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,-3.175]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,-0.635]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,1.905]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,4.445]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,6.985]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,9.525]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,-8.255]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,-5.715]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,-3.175]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,-0.635]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,1.905]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,4.445]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,6.985]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,9.525]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-7.500,8.945]) square([2.000,1.200], center = true); //ESP-12 1
 			translate([-7.500,6.945]) square([2.000,1.200], center = true); //ESP-12 2
 			translate([-7.500,4.945]) square([2.000,1.200], center = true); //ESP-12 3
 			translate([-7.500,2.945]) square([2.000,1.200], center = true); //ESP-12 4
@@ -207,6 +221,22 @@ module WEMOS_D1_MINI(Name="",Value="",Library=""){
 			translate([-3.060,-10.825]) rotate([0,0,180.000]) EaglePad([1.208,2.416], 100); //ZX62D-B-5PA8 S3
 			translate([1.790,-10.825]) rotate([0,0,180.000]) EaglePad([1.208,2.416], 100); //ZX62D-B-5PA8 S4
 		}
+			translate([-11.430,-8.255]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,-5.715]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,-3.175]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,-0.635]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,1.905]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,4.445]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,6.985]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,9.525]) circle(r=0.508,$fn=$fn);
+			translate([11.430,-8.255]) circle(r=0.508,$fn=$fn);
+			translate([11.430,-5.715]) circle(r=0.508,$fn=$fn);
+			translate([11.430,-3.175]) circle(r=0.508,$fn=$fn);
+			translate([11.430,-0.635]) circle(r=0.508,$fn=$fn);
+			translate([11.430,1.905]) circle(r=0.508,$fn=$fn);
+			translate([11.430,4.445]) circle(r=0.508,$fn=$fn);
+			translate([11.430,6.985]) circle(r=0.508,$fn=$fn);
+			translate([11.430,9.525]) circle(r=0.508,$fn=$fn);
 			translate([2.965,-13.725]) circle(r=0.750,$fn=$fn);
 			translate([-4.235,-13.725]) circle(r=0.750,$fn=$fn);
 			translate([-3.060,-10.825]) circle(r=0.350,$fn=$fn);
@@ -215,54 +245,50 @@ module WEMOS_D1_MINI(Name="",Value="",Library=""){
 		}
 		if (EnableWires && (Detailgrad > 12)) color("#7C770F",1) translate([0,0,board_thickness-0.017]) linear_extrude(height=0.035,center=false, convexity=10) difference()  { 
 	  union() { 
-					translate([-11.430,9.525]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,6.985]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,4.445]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,1.905]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,-0.635]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,-3.175]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,-5.715]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,-8.255]) circle(r=0.750,$fn=$fn);
-			translate([11.430,9.525]) circle(r=0.750,$fn=$fn);
-			translate([11.430,6.985]) circle(r=0.750,$fn=$fn);
-			translate([11.430,4.445]) circle(r=0.750,$fn=$fn);
-			translate([11.430,2.032]) circle(r=0.750,$fn=$fn);
-			translate([11.430,-0.635]) circle(r=0.750,$fn=$fn);
-			translate([11.430,-3.175]) circle(r=0.750,$fn=$fn);
-			translate([11.430,-5.715]) circle(r=0.750,$fn=$fn);
-			translate([11.430,-8.255]) circle(r=0.750,$fn=$fn);
-		}
-					if (EnableVias && (Detailgrad > 12)) 
- 					union() // Vias 
-					{
-				translate([-11.430,9.525]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,6.985]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,4.445]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,1.905]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,-0.635]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,-3.175]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,-5.715]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,-8.255]) circle(r=0.500,$fn=$fn);
-				translate([11.430,9.525]) circle(r=0.500,$fn=$fn);
-				translate([11.430,6.985]) circle(r=0.500,$fn=$fn);
-				translate([11.430,4.445]) circle(r=0.500,$fn=$fn);
-				translate([11.430,2.032]) circle(r=0.500,$fn=$fn);
-				translate([11.430,-0.635]) circle(r=0.500,$fn=$fn);
-				translate([11.430,-3.175]) circle(r=0.500,$fn=$fn);
-				translate([11.430,-5.715]) circle(r=0.500,$fn=$fn);
-				translate([11.430,-8.255]) circle(r=0.500,$fn=$fn);
-		}
+				}
 
 		}
 			if (EnablePolygones) {
 			}
 		if (Detailgrad > 10) color("#DFDDE0",1) translate([0,0,-0.022]) linear_extrude(height=0.040,center=false, convexity=10) difference()  { 
 	  union() { 
-					translate([2.965,-13.725]) circle(r=1.125,$fn=$fn);
+					translate([-11.430,-8.255]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,-5.715]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,-3.175]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,-0.635]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,1.905]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,4.445]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,6.985]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([-11.430,9.525]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,-8.255]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,-5.715]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,-3.175]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,-0.635]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,1.905]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,4.445]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,6.985]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([11.430,9.525]) rotate([0,0,22.500]) circle(r=0.962,$fn=8);
+			translate([2.965,-13.725]) circle(r=1.125,$fn=$fn);
 			translate([-4.235,-13.725]) circle(r=1.125,$fn=$fn);
 			translate([-3.060,-10.825]) rotate([0,0,180.000]) EaglePad([1.208,2.416], 100); //ZX62D-B-5PA8 S3
 			translate([1.790,-10.825]) rotate([0,0,180.000]) EaglePad([1.208,2.416], 100); //ZX62D-B-5PA8 S4
 		}
+			translate([-11.430,-8.255]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,-5.715]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,-3.175]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,-0.635]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,1.905]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,4.445]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,6.985]) circle(r=0.508,$fn=$fn);
+			translate([-11.430,9.525]) circle(r=0.508,$fn=$fn);
+			translate([11.430,-8.255]) circle(r=0.508,$fn=$fn);
+			translate([11.430,-5.715]) circle(r=0.508,$fn=$fn);
+			translate([11.430,-3.175]) circle(r=0.508,$fn=$fn);
+			translate([11.430,-0.635]) circle(r=0.508,$fn=$fn);
+			translate([11.430,1.905]) circle(r=0.508,$fn=$fn);
+			translate([11.430,4.445]) circle(r=0.508,$fn=$fn);
+			translate([11.430,6.985]) circle(r=0.508,$fn=$fn);
+			translate([11.430,9.525]) circle(r=0.508,$fn=$fn);
 			translate([2.965,-13.725]) circle(r=0.750,$fn=$fn);
 			translate([-4.235,-13.725]) circle(r=0.750,$fn=$fn);
 			translate([-3.060,-10.825]) circle(r=0.350,$fn=$fn);
@@ -271,58 +297,71 @@ module WEMOS_D1_MINI(Name="",Value="",Library=""){
 		}
 		if (EnableWires && (Detailgrad > 12)) color("#7C770F",1) translate([0,0,-0.017]) linear_extrude(height=0.035,center=false, convexity=10) difference()  { 
 	  union() { 
-					translate([-11.430,9.525]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,6.985]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,4.445]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,1.905]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,-0.635]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,-3.175]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,-5.715]) circle(r=0.750,$fn=$fn);
-			translate([-11.430,-8.255]) circle(r=0.750,$fn=$fn);
-			translate([11.430,9.525]) circle(r=0.750,$fn=$fn);
-			translate([11.430,6.985]) circle(r=0.750,$fn=$fn);
-			translate([11.430,4.445]) circle(r=0.750,$fn=$fn);
-			translate([11.430,2.032]) circle(r=0.750,$fn=$fn);
-			translate([11.430,-0.635]) circle(r=0.750,$fn=$fn);
-			translate([11.430,-3.175]) circle(r=0.750,$fn=$fn);
-			translate([11.430,-5.715]) circle(r=0.750,$fn=$fn);
-			translate([11.430,-8.255]) circle(r=0.750,$fn=$fn);
-		}
-					if (EnableVias && (Detailgrad > 12)) 
- 					union() // Vias 
-					{
-				translate([-11.430,9.525]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,6.985]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,4.445]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,1.905]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,-0.635]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,-3.175]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,-5.715]) circle(r=0.500,$fn=$fn);
-				translate([-11.430,-8.255]) circle(r=0.500,$fn=$fn);
-				translate([11.430,9.525]) circle(r=0.500,$fn=$fn);
-				translate([11.430,6.985]) circle(r=0.500,$fn=$fn);
-				translate([11.430,4.445]) circle(r=0.500,$fn=$fn);
-				translate([11.430,2.032]) circle(r=0.500,$fn=$fn);
-				translate([11.430,-0.635]) circle(r=0.500,$fn=$fn);
-				translate([11.430,-3.175]) circle(r=0.500,$fn=$fn);
-				translate([11.430,-5.715]) circle(r=0.500,$fn=$fn);
-				translate([11.430,-8.255]) circle(r=0.500,$fn=$fn);
-
-			}
+				}
 
 		}
 			if (EnablePolygones) {
 			}
 		if(EnableParts) union() // parts 
 		{
+			translate([-11.430,0.635,0])rotate([180,0,90])1X08_CLEANBIG(Name="JP1",Value="",Library="adafruit"); 
+			translate([11.430,0.635,0])rotate([180,0,90])1X08_CLEANBIG(Name="JP2",Value="",Library="adafruit"); 
 			translate([0.000,4.445,board_thickness])ESP_12(Name="X1",Value="",Library="adafruit"); 
 			translate([-0.635,-15.875,board_thickness])rotate([0,0,90])ZX62D_B_5PA8(Name="X2",Value="ZX62D-B-5PA8",Library="zx62d-b-5pa8-oshpark_10"); 
 		} //endunion() 
 	} // // PCB whith parts and text  
 
 
-}
+} // end module
 
+module LOETPIN(height = 6, dim = 0.6, rnd = false, displacement=0)
+{
+  color("Silver")  
+  {
+    if (Detailgrad > 40) 
+    {  
+        if (rnd)
+        {
+          translate([0,0,-height+dim/2]) cylinder(height-dim,dim/2,dim/2, $fn = Detailgrad);
+          translate([0,0,-(dim/2)]) sphere(dim/2,$fn = Detailgrad);
+          translate([0,0,-(height-dim/2)]) sphere(dim/2,$fn = Detailgrad); 
+        }
+        else
+        {  
+          translate([0,0,-(height/2)]) cube([dim,dim,height-2*dim], center = true);
+          translate([0,0,-(dim)])linear_extrude(dim, scale=0.5) translate([-dim/2,-dim/2]) square([dim,dim]);
+          translate([0,0,-(height-dim)]) mirror([0,0,1]) linear_extrude(dim, scale=0.5) translate([-dim/2,-dim/2]) square([dim,dim]); 
+        }   
+    } 
+    else
+    {  
+        if (rnd)
+        {
+          translate([0,0,-height]) cylinder(height,dim/2,dim/2, $fn = 10);
+        }
+        else
+        {  
+          if (displacement == 0)
+          {
+            translate([-dim/2,-dim/2,-height]) cube([dim,dim,height]);
+          }
+          else
+          {
+            dis = abs(displacement);
+            translate([-dim/2,-dim/2,-height]) cube([dim,dim,height/2-dis]); 
+            translate([displacement-(dim/2),-dim/2,-height/2+dis]) cube([dim,dim,height/2-dis]);
+            translate([displacement,dim/2,-height/2+dis]) rotate([90,0,0]) cylinder(dim,dim/2,dim/2); 
+            translate([0,dim/2,-height/2-dis]) rotate([90,0,0]) cylinder(dim,dim/2,dim/2);
+            translate([0,0,-height/2-dis ]) rotate([0,atan(0.5),0]) translate([-dim/2,-dim/2,0]) cube([dim,dim,sqrt(5*dis*dis)]); //  Hildeische Konstante war sin(30-3.435) = tan(30)
+          }
+        }   
+    } 
+    if ($children>0)
+    {
+      translate([0,0,-height]) children(0);
+    }        
+  }   
+}
 
 module ZX62D_B_5PA8(Name="",Value="",Library="") // MICRO USB
 {
@@ -396,6 +435,27 @@ module C_SMD(size = [1,1,1])
   } else {InvisiblePart();} 
 }
 
+module LSTB(n=20,m=1, mark=true)
+{
+  offs = 0.9;
+  height = 11.6; 
+  pitch = 2.54; 
+  pin = 0.6;  
+   
+    if (mark)
+    {
+      translate([-(pitch/2)*n+offs,-(pitch/2)*m+offs,2.6]) color("Yellow") linear_extrude(0.01) 
+       offset_square(size=[pitch-2*offs,pitch*m-2*offs], delta = offs, chamfer=true);
+    } 
+    translate([-(pitch/2)*n+offs,-(pitch/2)*m+offs,0]) make_line_of(pitch, n) color("lightgreen") linear_extrude(2.6) offset_square(size=[pitch-2*offs,pitch*m-2*offs], delta = offs, chamfer=true);
+
+    translate([-(pitch/2)*(n-1),-(pitch/2)*(m-1),8.7]) make_line_of(pitch, n)  LOETPIN(height = height, dim = pin, rnd = false); 
+    
+    if (m>1) translate([-(pitch/2)*(n-1),+(pitch/2)*(m-1),8.7]) make_line_of(pitch, n) LOETPIN(height = height, dim = pin, rnd = false);  
+      
+    if (m>2) translate([-(pitch/2)*(n-1),0,8.7]) make_line_of(pitch, n)  LOETPIN(height = height, dim = pin, rnd = false);    
+}
+
 
 module Phased_cylinder(l,r1,r2,Roundness = 0.2)
 {
@@ -412,6 +472,15 @@ module Phased_cylinder(l,r1,r2,Roundness = 0.2)
     rotate_extrude(convexity = 10) translate([r1-round1, round1, 0]) circle(r = round1); 
     rotate_extrude(convexity = 10) translate([r2-round2, l-round2, ]) circle(r = round1); 
   }    
+}
+module make_line_of(pitch, count, center = false)
+{
+    displacement = center ? ((count - 1) * pitch) / 2 : 0;
+    translate([-displacement,0,0]) for (a = [0 : count - 1]) {
+        pos = a*pitch;
+        translate([pos, 0, 0])
+                children();
+    }
 }
 module cubepart(size = [1,1,1], phase = 0, r = 0, frustum = 0)
 {
@@ -430,6 +499,7 @@ module cylinderpart(size = [1,1])
 {
    cylinder(size[1],size[0]/2,size[0]/2, $fn = Detailgrad); 
 }
+
 module offset_square(size = [1,1], r = 0, delta = 0, chamfer=false, center = false, $fn = Detailgrad)
 {
   num = round($fn/4);
@@ -483,3 +553,33 @@ module BendedRectangle(Dim=[0.6,0.9], r=0.75)
  } 
 }
    
+module LSTA(n=20,m=1,mark=true)
+{
+  offs = 0.4;
+  height = 7.5; 
+  pitch = 2.54; 
+  pin = 0.4;
+   
+  difference()
+  {  
+    union()
+    {
+      if (mark)
+      {
+        translate([-(pitch/2)*n+offs,-(pitch/2)*m+offs,8.4]) color("Yellow") linear_extrude(0.01)  offset_square(size=[pitch-2*offs,pitch*m-2*offs], delta = offs, chamfer=true);
+      }
+      translate([-(pitch/2)*n+offs,-(pitch/2)*m+offs,0]) make_line_of(pitch, n) color("DarkSlateGray") linear_extrude(8.4)  offset_square(size=[pitch-2*offs,pitch*m-2*  offs], delta = offs, chamfer=true);
+    }
+    translate([-(pitch/2)*(n-1),-(pitch/2)*(m-1),3]) make_line_of(pitch, n) color("DarkSlateGray") cubepart([0.9,0.9,6]);
+      
+    if (m>1) translate([-(pitch/2)*(n-1),+(pitch/2)*(m-1),3]) make_line_of(pitch, n) color("DarkSlateGray") cubepart([0.9,0.9,6]);  
+        
+    if (m>2) translate([-(pitch/2)*(n-1),0,3]) make_line_of(pitch, n) color("DarkSlateGray") cubepart([0.9,0.9,6]);  
+      
+  }
+    translate([-(pitch/2)*(n-1),-(pitch/2)*(m-1),0]) make_line_of(pitch, n)  color("Silver")  translate([0,0,-4.5+height/2]) cube([pin,pin,height-3], center = true); 
+    
+    if (m>1) translate([-(pitch/2)*(n-1),+(pitch/2)*(m-1),0]) make_line_of(pitch, n)  color("Silver")  translate([0,0,-4.5+height/2]) cube([pin,pin,height-3], center = true); 
+      
+    if (m>2) translate([-(pitch/2)*(n-1),0,0]) make_line_of(pitch, n)  color("Silver")  translate([0,0,-4.5+height/2]) cube([pin,pin,height-3], center = true);   
+}
