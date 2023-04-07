@@ -583,3 +583,7 @@ module LSTA(n=20,m=1,mark=true)
       
     if (m>2) translate([-(pitch/2)*(n-1),0,0]) make_line_of(pitch, n)  color("Silver")  translate([0,0,-4.5+height/2]) cube([pin,pin,height-3], center = true);   
 }
+
+module TSOP38(Name="",Value="",Library="") { translate([0,0,3]) color("DarkSlateGray") { cubepart([5,2.8,6.95]); translate([0,-1,4]) sphere(2); translate([0,-1,0]) cylinder(4,2,2);} }
+
+module DC_DC_STEP_DOWN_LM2596(Name="",Value="",Library="diy-modules"){  include<DC-DC-STEP-DOWN-LM2596.csg>;}
